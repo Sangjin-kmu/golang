@@ -155,7 +155,7 @@ Towers of Hanoi
 <img width="626" alt="스크린샷 2025-05-15 오전 10 29 31" src="https://github.com/user-attachments/assets/4ec55bf2-a882-486c-9f45-712f888e8873" />  
   
 **-후기-**  
-math라이브러리에 대해서 알수있었다. 또한 C언어와 비슷한 printf 가 있었다는 걸 알우있었다.  
+math라이브러리에 대해서 알수있었다. 또한 C언어와 비슷한 printf 가 있었다는걸 알 수 있었다.  
   
 ### 실습3  
 golang을 이용하여 2개의 함수를 호출후 sleep을 통해 지연을 주어 출력을 보는 실습  
@@ -261,12 +261,12 @@ func main() {
 7
 8
 ```  
+   
+**-스크린샷-**  
+<img width="635" alt="스크린샷 2025-05-15 오전 10 39 46" src="https://github.com/user-attachments/assets/8cbb843b-c5a0-4e80-acbd-04fd6009eb4d" />  
   
 **-후기-**  
 트리를 만들어봄으로써 연결(link)를 하는 포인터가 존재한다는걸 알 수 있었다.  
-  
-**-스크린샷-**  
-<img width="635" alt="스크린샷 2025-05-15 오전 10 39 46" src="https://github.com/user-attachments/assets/8cbb843b-c5a0-4e80-acbd-04fd6009eb4d" />  
   
 ### 실습5  
 golang언어를 이용하여 "(", ")" 로 이루어진 문자열이 균형잡혀있는지(괄호가 짝지어 닫히는지) 검사하는 실습  
