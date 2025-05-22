@@ -1,5 +1,5 @@
 # 프로그래밍언어론 20213039 이상진  
-## 과제B2
+## 과제B2 - golang
 
 ### 실습1  
 피보나치 수열을 golang 방식을 이용하여 재귀, 반복 방식으로 구하는 실습  
@@ -325,4 +325,201 @@ func main() {
   
 **-후기-**  
 stack의 사용법, strings을 통해 문자열을 배열로 사용하는 법을 알 수 있었다.  
+  
+  
+--------------------------------------------------------------------------------------------  
+  
+## 과제B2 - swift
+  
+### 실습1  
+swift를 이용해서 hello, world 출력 실습  
+  
+**-코드-**  
+```swift
+import Foundation
+
+print("Hello, World!")
+```  
+  
+**-결과-**  
+```
+Hello, World!
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+ <img width="550" alt="스크린샷 2025-05-22 오후 12 38 12" src="https://github.com/user-attachments/assets/f4cbbecb-4d82-43eb-88d1-0ee90b113a1a" />  
+  
+**-후기-**  
+ios개발용인 swift를 mac에 설치하여, 가장 쉬운 hello, world를 실행해보았다.  
+주로 개발용으로 쓰여서 실습이 많이 없는 점이 아쉽다.  
+  
+  
+### 실습2  
+swift를 이용해서 Optional 타입 실험 실습  
+  
+**-코드-**  
+```swift
+func greetUser(name: String?) {
+    if let unwrappedName = name {
+        print("안녕하세요, \(unwrappedName)님!")
+    } else {
+        print("이름이 없습니다.")
+    }
+}
+
+greetUser(name: "상진")
+greetUser(name: nil)
+```  
+  
+**-결과-**  
+```
+안녕하세요, 상진님!
+이름이 없습니다.
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+ <img width="558" alt="스크린샷 2025-05-22 오후 12 45 41" src="https://github.com/user-attachments/assets/65ad20ad-a668-4a67-b62d-2dc52558a0ce" />  
+  
+**-후기-**  
+Optional타입 String?은 nil(null)을 가질수 있다는걸 알았고 if let 구문은 옵셔널 바인딩을 통해 안전하게 값을 꺼낼 수 있다는걸 알았다.  
+  
+  
+### 실습3  
+swift를 이용해서 코드 블록을 변수처럼 전달할 수 있는 클로저 실습  
+  
+**-코드-**  
+```swift
+let multiply: (Int, Int) -> Int = { a, b in
+    return a * b
+}
+
+let result = multiply(3, 4)
+print("곱셈 결과: \(result)") 
+```  
+  
+**-결과-**  
+```
+곱셈 결과: 12
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+<img width="583" alt="스크린샷 2025-05-22 오후 12 52 10" src="https://github.com/user-attachments/assets/aa7d9ff9-61e6-4559-9ff7-79cdbf9d27f4" />  
+  
+**-후기-**  
+{ a, b in return a * b }은 두 정수를 받아 곱한 값을 반환하는 클로저 표현식이다. 이를 통해 swift는 함수형 프로그래밍 스타일을 지원한다는걸 알았다.  
+  
+  
+### 실습4  
+swift를 이용해서 이전값 접근 실습  
+  
+**-코드-**  
+```swift
+var steps: Int = 0 {
+    didSet {
+        print("걸음 수가 \(oldValue)에서 \(steps)으로 변경됨")
+    }
+}
+
+steps = 100
+steps = 250
+
+}
+
+let result = multiply(3, 4)
+print("곱셈 결과: \(result)") 
+```  
+  
+**-결과-**  
+```
+걸음 수가 0에서 100으로 변경됨
+걸음 수가 100에서 250으로 변경됨
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+<img width="560" alt="스크린샷 2025-05-22 오후 12 55 16" src="https://github.com/user-attachments/assets/78051b67-133a-4f0d-ba2c-d25c7b2957f5" />  
+  
+**-후기-**  
+didset은 값이 변경된 직후 실행되지만, 이전 값을 oldValue로 접근 할 수 있다는걸 알았다. 이를 통해 유용성 검사를 할 수 있을거같다.  
+  
+  
+### 실습5  
+swift를 이용해서 값을 함께 저장하는 실습  
+  
+**-코드-**  
+```swift
+enum Media {
+    case book(title: String, author: String)
+    case movie(title: String, director: String)
+}
+
+let favorite = Media.book(title: "해리포터", author: "J.K. 롤링")
+
+switch favorite {
+case .book(let title, let author):
+    print("책: \(title) by \(author)")
+case .movie(let title, let director):
+    print("영화: \(title) by \(director)")
+}
+
+```  
+  
+**-결과-**  
+```
+책: 해리포터 by J.K. 롤링
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+<img width="591" alt="스크린샷 2025-05-22 오후 1 00 13" src="https://github.com/user-attachments/assets/a65914d0-accd-4c85-9e81-cfa4418ceb3b" />  
+
+  
+**-후기-**  
+case마다 관련 데이터를 포함 할 수 있고, switch로 분기 처리 시 패턴 매칭으로 값 추출이 가능하다는걸 알았다.  
+  
+  
+### 실습6  
+swift를 이용해서 객체지향, 프로토콜 지향 실습  
+  
+**-코드-**  
+```swift
+protocol Flyable {
+    func fly()
+}
+
+struct Bird: Flyable {
+    func fly() {
+        print("새가 날고 있어요!")
+    }
+}
+
+struct Airplane: Flyable {
+    func fly() {
+        print("비행기가 이륙합니다!")
+    }
+}
+
+let flyers: [Flyable] = [Bird(), Airplane()]
+flyers.forEach { $0.fly() }
+
+}
+
+```  
+  
+**-결과-**  
+```
+새가 날고 있어요!
+비행기가 이륙합니다!
+Program ended with exit code: 0
+```  
+  
+**-스크린샷-**  
+<img width="574" alt="스크린샷 2025-05-22 오후 1 05 54" src="https://github.com/user-attachments/assets/e162e50f-a550-4ab6-9ee5-f01f505aebb9" />  
+  
+**-후기-**  
+Flyable이라는 프로토콜을 정의하고, 이를 채택한 타입은 fly()메소드를 구현함으로써 프로토콜 지향이라는걸 알 수 있다. 이를 통해 다양한 타입을 공통 인터페이스로 처리 할 수 있다.  
+  
   
